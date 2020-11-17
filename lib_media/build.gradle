@@ -1,0 +1,67 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group 'com.github.wukuiqing49'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+//        ndk {
+//            abiFilters 'armeabi-v7a'
+//        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled true
+    }
+    dexOptions {
+        javaMaxHeapSize '4g'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    //androidX
+    implementation "androidx.legacy:legacy-support-v4:$rootProject.androidX_legacy_support_v4"
+    implementation "androidx.appcompat:appcompat:$rootProject.androidXAppcompat"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.androidXRecyclerview"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.androidXConstraintlayout"
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    //glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide"
+    implementation "jp.wasabeef:glide-transformations:$rootProject.glideTransformations"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.compiler"
+    api "io.reactivex.rxjava2:rxjava:$rootProject.rxJava"
+    api "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid"
+    //视讯云SDK
+    implementation "com.qmuiteam:qmui:$rootProject.qmui"
+
+//    implementation "com.cnlive.libs:base:$rootProject.libBase"
+    implementation 'com.github.chrisbanes:PhotoView:2.1.4'
+
+    //ARouter
+    implementation "com.alibaba:arouter-api:$rootProject.arouterApiVersion"
+    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterCompilerVersion"
+    //七牛录制视频
+    implementation files('libs/pldroid-shortvideo-3.1.0.jar')
+
+    implementation 'com.github.wukuiqing49:wkq_mvvm_mvp_base:1.0.42'
+    implementation "com.qiniu:qiniu-android-sdk:$rootProject.qiniuAndroidSdk"
+
+}
