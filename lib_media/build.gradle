@@ -15,11 +15,11 @@ android {
 //            abiFilters 'armeabi-v7a'
 //        }
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
-            }
-        }
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+//            }
+//        }
     }
 
     compileOptions {
@@ -56,8 +56,8 @@ dependencies {
     implementation 'com.github.chrisbanes:PhotoView:2.1.4'
 
     //ARouter
-    implementation "com.alibaba:arouter-api:$rootProject.arouterApiVersion"
-    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterCompilerVersion"
+//    implementation "com.alibaba:arouter-api:$rootProject.arouterApiVersion"
+//    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterCompilerVersion"
     //七牛录制视频
     implementation files('libs/pldroid-shortvideo-3.1.0.jar')
 
