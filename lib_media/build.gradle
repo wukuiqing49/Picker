@@ -47,8 +47,9 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$rootProject.glide"
     implementation "jp.wasabeef:glide-transformations:$rootProject.glideTransformations"
     annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.compiler"
-    api "io.reactivex.rxjava2:rxjava:$rootProject.rxJava"
-    api "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid"
+
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJava"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid"
     //视讯云SDK
     implementation "com.qmuiteam:qmui:$rootProject.qmui"
 
