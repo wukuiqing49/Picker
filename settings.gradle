@@ -1,1 +1,3 @@
+
+rootProject.name = "MediaPicker"
 include ':app',':lib_media'
